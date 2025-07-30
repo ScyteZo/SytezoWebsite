@@ -42,6 +42,7 @@
             max-width: 800px;
             position: relative;
             margin-bottom: 40px;
+            text-align: center;
         }
         
         textarea {
@@ -133,6 +134,34 @@
             animation: glowPink 1.5s ease-in-out infinite alternate;
         }
         
+        .executor-image {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #7DF9FF;
+            box-shadow: 0 0 15px rgba(125, 249, 255, 0.7);
+        }
+        
+        .script-image {
+            width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 2px solid #7DF9FF;
+            box-shadow: 0 0 15px rgba(125, 249, 255, 0.7);
+            display: block;
+            margin: 0 auto 10px;
+        }
+        
+        .script-label {
+            color: #7DF9FF;
+            text-shadow: 0 0 5px #7DF9FF;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
         @keyframes glow {
             from {
                 text-shadow: 0 0 5px #7DF9FF, 0 0 10px #7DF9FF;
@@ -180,12 +209,13 @@
     </style>
 </head>
 <body>
-    <!-- Main Title Changed to ScyteZoweb -->
     <h1>ScyteZoweb</h1>
     
-    <!-- First Script Box -->
-    <div class="script-title">Nathub Grow A Garden Script</div>
+    <!-- NatHub Script Section -->
     <div class="script-container">
+        <div class="script-label">Script</div>
+        <img src="nat.png" class="script-image" alt="NatHub">
+        <div class="script-title">Nathub Grow A Garden Script</div>
         <textarea id="script-text1" readonly>loadstring(game:HttpGet("https://get.nathub.xyz/loader"))()</textarea>
         <button id="copy-button1">Copy Script</button>
         <div id="copied-message1" class="copied-message">Script copied to clipboard!</div>
@@ -193,31 +223,33 @@
     
     <div class="separator"></div>
     
-    <!-- Second Script Box -->
-    <div class="script-title">Speedhub Grow A Garden Script</div>
+    <!-- Speed Hub Script Section -->
     <div class="script-container">
+        <div class="script-label"></div>
+        <img src="speed.jpeg" class="script-image" alt="Speed Hub">
+        <div class="script-title">Speedhub Grow A Garden Script</div>
         <textarea id="script-text2" readonly>loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()</textarea>
         <button id="copy-button2">Copy Script</button>
         <div id="copied-message2" class="copied-message">Script copied to clipboard!</div>
     </div>
 
-    <!-- Executor for Android Section -->
+    <!-- Delta Executor Section -->
     <div class="separator"></div>
     
     <div class="executor-section">
         <div class="executor-title">EXECUTOR ROBLOX FOR ANDROID</div>
+        <img src="delta.jpeg" class="executor-image" alt="Delta Executor">
         <a href="https://delta.webfiles.pro/android.html" target="_blank">
             <button id="download-button">Download Delta Executor Here</button>
         </a>
     </div>
 
     <script>
-        // Copy functionality for first box
+        // Copy functionality
         document.getElementById('copy-button1').addEventListener('click', function() {
             copyScript('script-text1', 'copied-message1', this);
         });
 
-        // Copy functionality for second box
         document.getElementById('copy-button2').addEventListener('click', function() {
             copyScript('script-text2', 'copied-message2', this);
         });
@@ -252,7 +284,6 @@
                 particle.style.height = `${size}px`;
                 particle.style.opacity = Math.random() * 0.5 + 0.1;
                 
-                // Start particles at random positions
                 particle.style.left = `${Math.random() * 100}vw`;
                 particle.style.top = `${Math.random() * 100}vh`;
                 
@@ -265,7 +296,6 @@
             let x = Math.random() * window.innerWidth;
             let y = Math.random() * window.innerHeight;
             
-            // Random speed and direction
             let xSpeed = (Math.random() - 0.5) * 0.8;
             let ySpeed = (Math.random() - 0.5) * 0.8;
             
@@ -273,7 +303,6 @@
                 x += xSpeed;
                 y += ySpeed;
                 
-                // Bounce off edges
                 if (x <= 0 || x >= window.innerWidth) xSpeed *= -1;
                 if (y <= 0 || y >= window.innerHeight) ySpeed *= -1;
                 
